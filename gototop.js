@@ -1,6 +1,6 @@
 window.onload =() => {
    
-    var test = document.getElementById("test");
+    //var test = document.getElementById("test");
 
     test.onclick = () => {
         var target = test.getAttribute("data-gte-target");
@@ -9,7 +9,7 @@ window.onload =() => {
         var element = document.getElementById(target);
 
         window.scrollTo({
-            top: element.offsetTop,
+            top: element.offsetTop - offset,
             behavior:"smooth"
         })
     }
