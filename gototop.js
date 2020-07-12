@@ -1,16 +1,23 @@
-window.onload =() => {
-   
-    //var test = document.getElementById("test");
+window.onload = () => {
 
-    test.onclick = () => {
-        var target = test.getAttribute("data-gte-target");
-        var offset = test.getAttribute("data-gte-offset");
+    var elements = document.getElementsByTagName("*");
 
-        var element = document.getElementById(target);
+    for (let index = 0; index < elements.length; index++) {
+        const e = elements[index];
+        
+        e.onclick = () => {
+            var target = e.getAttribute("data-gte-target");  
+            var offset = e.getAttribute("data-gte-offset");  
+    
+            if (target) {
 
-        window.scrollTo({
-            top: element.offsetTop - offset,
-            behavior:"smooth"
-        })
+                var element = document.getElementById(target);      
+        
+                window.scrollTo({
+                    top: element.offsetTop - offset,
+                    behavior: "smooth"
+                })
+            }
+        }
     }
 }
